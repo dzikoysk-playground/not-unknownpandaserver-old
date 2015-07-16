@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="UnknownPandaServer.jar">
+    <output-path>$USER_HOME$/Desktop/UnknownPanda Server</output-path>
+    <root id="archive" name="UnknownPandaServer.jar">
+      <element id="module-output" name="UnknownPandaServer" />
+    </root>
+  </artifact>
+</component>
