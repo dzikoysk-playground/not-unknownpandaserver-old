@@ -11,48 +11,48 @@ import net.dzikoysk.server.util.json.JSONArray;
 import net.dzikoysk.server.util.json.JSONObject;
 
 public class PacketStatusOutServerInfo extends Packet {
-	
-	@Override
-	public void send(DataSerializer data){
-		String json = getServerInfo().toString();
-		DataEncoder.encodeString(data, json);
-	}
 
-	@Override
-	public PacketInfo getPacketInfo(){
-		return PacketInfo.STATUS_OUT_SERVER_INFO;
-	}
-	
-	private JSONObject getServerInfo(){
-		ServerConfiguration configuration = UnknownPandaServer.getConfiguration();
-		JSONObject object = new JSONObject();
-	
-		JSONObject version = new JSONObject();
-		version.put("name", configuration.getString("name"));
-		version.put("protocol", configuration.getInteger("protocol"));
-		object.put("version", version);
-		
-		JSONObject players = new JSONObject();
-		players.put("max", configuration.getInteger("players"));
-		players.put("online", UnknownPandaServer.getOnlinePlayers().size());
-		
-		JSONArray sample = new JSONArray();
-		for(Player player : UnknownPandaServer.getOnlinePlayers()){
-			JSONObject element = new JSONObject();
-			element.put("name", player.getName());
-			element.put("id", player.getUUID().toString());
-			sample.put(element);
-		}
-		players.put("sample", sample);
-		object.put("players", players);
-		
-		JSONObject desc = new JSONObject();
-		desc.put("text", configuration.getString("motd"));
-		object.put("description", desc);
-		
-		object.put("favicon", "");
+    @Override
+    public void send(DataSerializer data) {
+        String json = getServerInfo().toString();
+        DataEncoder.encodeString(data, json);
+    }
 
-		return object;
-	}
-	
+    @Override
+    public PacketInfo getPacketInfo() {
+        return PacketInfo.STATUS_OUT_SERVER_INFO;
+    }
+
+    private JSONObject getServerInfo() {
+        ServerConfiguration configuration = UnknownPandaServer.getConfiguration();
+        JSONObject object = new JSONObject();
+
+        JSONObject version = new JSONObject();
+        version.put("name", configuration.getString("name"));
+        version.put("protocol", configuration.getInteger("protocol"));
+        object.put("version", version);
+
+        JSONObject players = new JSONObject();
+        players.put("max", configuration.getInteger("players"));
+        players.put("online", UnknownPandaServer.getOnlinePlayers().size());
+
+        JSONArray sample = new JSONArray();
+        for (Player player : UnknownPandaServer.getOnlinePlayers()) {
+            JSONObject element = new JSONObject();
+            element.put("name", player.getName());
+            element.put("id", player.getUUID().toString());
+            sample.put(element);
+        }
+        players.put("sample", sample);
+        object.put("players", players);
+
+        JSONObject desc = new JSONObject();
+        desc.put("text", configuration.getString("motd"));
+        object.put("description", desc);
+
+        object.put("favicon", "");
+
+        return object;
+    }
+
 }

@@ -10,32 +10,32 @@ import net.dzikoysk.server.world.Location;
 
 public class PacketPlayInPlayerDigging extends Packet {
 
-	private DiggingStatus status;
-	private Location position;
-	private BlockFace face;
+    private DiggingStatus status;
+    private Location position;
+    private BlockFace face;
 
-	@Override
-	public void receive(DataSerializer data){
-		status = DiggingStatus.valueOf(data.readByte());
-		position = DataDecoder.decodeLocation(data);
-		face = BlockFace.valueOf(data.readByte());
-	}
+    @Override
+    public void receive(DataSerializer data) {
+        status = DiggingStatus.valueOf(data.readByte());
+        position = DataDecoder.decodeLocation(data);
+        face = BlockFace.valueOf(data.readByte());
+    }
 
     @Override
     public PacketInfo getPacketInfo() {
-	    return PacketInfo.PLAY_IN_PLAYER_DIGGING;
+        return PacketInfo.PLAY_IN_PLAYER_DIGGING;
     }
 
-	public DiggingStatus getStatus(){
-		return this.status;
-	}
+    public DiggingStatus getStatus() {
+        return this.status;
+    }
 
-	public Location getPosition(){
-		return this.position;
-	}
+    public Location getPosition() {
+        return this.position;
+    }
 
-	public BlockFace getFace(){
-		return this.face;
-	}
+    public BlockFace getFace() {
+        return this.face;
+    }
 
 }

@@ -11,69 +11,69 @@ import net.dzikoysk.server.world.World;
 import java.util.Collection;
 
 public class UnknownPandaServer {
-	
-	public static final String VERSION = "1.0.0";
 
-	private static Logger logger;
-	private static ServerConfiguration configuration;
-	private static MinecraftServer server;
+    public static final String VERSION = "1.0.0";
 
-	private static ProtocolVersion protocol;
-	private static String host;
-	private static int port;
-	
-	public static void main(String[] args) throws Exception {
-		long start = System.currentTimeMillis();
+    private static Logger logger;
+    private static ServerConfiguration configuration;
+    private static MinecraftServer server;
 
-		logger = new Logger();
-		configuration = new ServerConfiguration();
-		protocol = ProtocolVersion.getProtocolVersion(configuration.getInteger("protocol"));
-		host = configuration.getString("host");
-		port = configuration.getInteger("port");
+    private static ProtocolVersion protocol;
+    private static String host;
+    private static int port;
 
-		getLogger().info("Starting minecraft server on *:" + port);
-		getLogger().info("Server's protocol number '" + protocol.getNumber() + "' for version " + protocol.getName());
-		server = new MinecraftServer(port);
+    public static void main(String[] args) throws Exception {
+        long start = System.currentTimeMillis();
 
-		Thread.currentThread().setName("UnknownPandaServer - Main Thread");
-		getLogger().info("Done (" + (System.currentTimeMillis() - start) + "ms)!");
-	}
+        logger = new Logger();
+        configuration = new ServerConfiguration();
+        protocol = ProtocolVersion.getProtocolVersion(configuration.getInteger("protocol"));
+        host = configuration.getString("host");
+        port = configuration.getInteger("port");
 
-	public static void broadcastMessage(String message){
-		PacketUtil.distributeAll(new PacketPlayOutChatMessage(message));
-		getLogger().info(message);
-	}
+        getLogger().info("Starting minecraft server on *:" + port);
+        getLogger().info("Server's protocol number '" + protocol.getNumber() + "' for version " + protocol.getName());
+        server = new MinecraftServer(port);
 
-	public static void broadcastColoredMessage(String message){
-		broadcastMessage(ChatColor.translate(message));
-	}
+        Thread.currentThread().setName("UnknownPandaServer - Main Thread");
+        getLogger().info("Done (" + (System.currentTimeMillis() - start) + "ms)!");
+    }
 
-	public static Logger getLogger(){
-		return logger;
-	}
+    public static void broadcastMessage(String message) {
+        PacketUtil.distributeAll(new PacketPlayOutChatMessage(message));
+        getLogger().info(message);
+    }
 
-	public static Collection<Player> getOnlinePlayers(){
-		return server.getOnlinePlayers();
-	}
+    public static void broadcastColoredMessage(String message) {
+        broadcastMessage(ChatColor.translate(message));
+    }
 
-	public static World getWorld(){
-		return server.getWorld();
-	}
+    public static Logger getLogger() {
+        return logger;
+    }
 
-	public static MinecraftServer getMinecraftServer(){
-		return server;
-	}
-	
-	public static ServerConfiguration getConfiguration(){
-		return configuration;
-	}
-	
-	public static String getHost(){
-		return host;
-	}
-	
-	public static int getPort(){
-		return port;
-	}
+    public static Collection<Player> getOnlinePlayers() {
+        return server.getOnlinePlayers();
+    }
+
+    public static World getWorld() {
+        return server.getWorld();
+    }
+
+    public static MinecraftServer getMinecraftServer() {
+        return server;
+    }
+
+    public static ServerConfiguration getConfiguration() {
+        return configuration;
+    }
+
+    public static String getHost() {
+        return host;
+    }
+
+    public static int getPort() {
+        return port;
+    }
 
 }

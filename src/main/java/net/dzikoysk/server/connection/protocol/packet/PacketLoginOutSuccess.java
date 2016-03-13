@@ -7,26 +7,26 @@ import net.dzikoysk.server.connection.protocol.util.DataSerializer;
 import net.dzikoysk.server.entity.Player;
 
 public class PacketLoginOutSuccess extends Packet {
-	
-	private final Player player;
-	
-	public PacketLoginOutSuccess(Player player){
-		this.player = player;
-	}
-	
-	@Override
-	public void send(DataSerializer data){
-		DataEncoder.encodeString(data, player.getUUID().toString());
-		DataEncoder.encodeString(data, player.getName());
-	}
-	
-	@Override
-	public PacketInfo getPacketInfo(){
-		return PacketInfo.LOGIN_OUT_SUCCESS;
-	}
 
-	public Player getPlayer(){
-		return player;
-	}
-	
+    private final Player player;
+
+    public PacketLoginOutSuccess(Player player) {
+        this.player = player;
+    }
+
+    @Override
+    public void send(DataSerializer data) {
+        DataEncoder.encodeString(data, player.getUUID().toString());
+        DataEncoder.encodeString(data, player.getName());
+    }
+
+    @Override
+    public PacketInfo getPacketInfo() {
+        return PacketInfo.LOGIN_OUT_SUCCESS;
+    }
+
+    public Player getPlayer() {
+        return player;
+    }
+
 }

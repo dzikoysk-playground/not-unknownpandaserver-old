@@ -8,12 +8,14 @@ import java.io.IOException;
 
 public class PacketUtil {
 
-	public static void distributeAll(Packet packet){
-		for(Player player : UnknownPandaServer.getOnlinePlayers())
-			try {
-				player.getPlayerConnection().sendPacket(packet);
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-	}
+    public static void distributeAll(Packet packet) {
+        for (Player player : UnknownPandaServer.getOnlinePlayers()) {
+            try {
+                player.getPlayerConnection().sendPacket(packet);
+            }
+            catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
 }

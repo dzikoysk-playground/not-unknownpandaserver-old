@@ -34,14 +34,18 @@ public enum ChatColor {
 
     private static final Map<Character, ChatColor> BY_CHAR;
 
+    static {
+        BY_CHAR = new HashMap<>();
+
+        for (ChatColor chatColor : values()) {
+            BY_CHAR.put(chatColor.getCharCode(), chatColor);
+        }
+    }
+
     private final char charCode;
 
     ChatColor(char charCode) {
         this.charCode = charCode;
-    }
-
-    public char getCharCode() {
-        return charCode;
     }
 
     public static ChatColor getByCharCode(char c) {
@@ -55,7 +59,7 @@ public enum ChatColor {
     public static String translate(char altColorChar, String textToTranslate) {
         char[] b = textToTranslate.toCharArray();
         for (int i = 0; i < (b.length - 1); i++) {
-            if ((b[i] == altColorChar) && ("0123456789AaBbCcDdEeFfKkLlMmNnOoRr".indexOf(b[(i + 1)]) > - 1)) {
+            if ((b[i] == altColorChar) && ("0123456789AaBbCcDdEeFfKkLlMmNnOoRr".indexOf(b[(i + 1)]) > -1)) {
                 b[i] = COLOR_CHAR;
                 b[(i + 1)] = Character.toLowerCase(b[(i + 1)]);
             }
@@ -63,12 +67,8 @@ public enum ChatColor {
         return new String(b);
     }
 
-    static {
-        BY_CHAR = new HashMap<>();
-
-        for (ChatColor chatColor : values()) {
-            BY_CHAR.put(chatColor.getCharCode(), chatColor);
-        }
+    public char getCharCode() {
+        return charCode;
     }
 
 }

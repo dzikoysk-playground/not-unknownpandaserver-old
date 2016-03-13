@@ -7,20 +7,20 @@ import net.dzikoysk.server.connection.protocol.util.DataSerializer;
 
 public class PacketPlayInChatMessage extends Packet {
 
-	private String message;
+    private String message;
 
-	@Override
-	public void receive(DataSerializer data){
-		message = DataDecoder.decodeString(data);
-	}
+    @Override
+    public void receive(DataSerializer data) {
+        message = DataDecoder.decodeString(data);
+    }
 
-	@Override
-	public PacketInfo getPacketInfo(){
-		return PacketInfo.PLAY_IN_CHAT_MESSAGE;
-	}
+    @Override
+    public PacketInfo getPacketInfo() {
+        return PacketInfo.PLAY_IN_CHAT_MESSAGE;
+    }
 
-	public String getMessage(){
-		return this.message;
-	}
+    public String getMessage() {
+        return this.message;
+    }
 
 }

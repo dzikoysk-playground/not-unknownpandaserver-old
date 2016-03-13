@@ -6,6 +6,6 @@ import java.util.Collection;
 
 public class SchedulerModule {
 
-	private Collection<ScheduledTask> tasks;
+    private Collection<ScheduledTask> tasks;
 
 }

@@ -9,29 +9,30 @@ import java.util.TimerTask;
 
 public class KeepAliveTask extends TimerTask {
 
-	private final PlayerConnection connection;
-	private final Timer timer;
-	
-	public KeepAliveTask(PlayerConnection connection){
-		this.connection = connection;
-		this.timer = new Timer();
-	}
-	
-	public void start(){
-    	timer.schedule(this, 0, 1000);
-	}
-	
-	public void stop(){
-    	timer.cancel();
-	}
-	
-	@Override
-	public void run() {
-		try {
-			connection.sendPacket(new PacketPlayIOKeepAlive());
-		} catch (IOException e) {
-			stop();
-		}
-	}
+    private final PlayerConnection connection;
+    private final Timer timer;
+
+    public KeepAliveTask(PlayerConnection connection) {
+        this.connection = connection;
+        this.timer = new Timer();
+    }
+
+    public void start() {
+        timer.schedule(this, 0, 1000);
+    }
+
+    public void stop() {
+        timer.cancel();
+    }
+
+    @Override
+    public void run() {
+        try {
+            connection.sendPacket(new PacketPlayIOKeepAlive());
+        }
+        catch (IOException e) {
+            stop();
+        }
+    }
 
 }

@@ -10,47 +10,51 @@ import java.util.LinkedList;
 
 public class ChatModule extends Thread {
 
-	private static ChatModule instance;
-	private Collection<String> messages;
-	private Object locker;
+    private static ChatModule instance;
+    private Collection<String> messages;
+    private Object locker;
 
-	public ChatModule(){
-		messages = new LinkedList<>();
-		locker = new Object();
-		instance = this;
-	}
+    public ChatModule() {
+        messages = new LinkedList<>();
+        locker = new Object();
+        instance = this;
+    }
 
-	@Override
-	public void run(){
-		while(true) try {
-			distribute();
-			messages.clear();
-			synchronized (locker){
-				locker.wait();
-			}
-		} catch (Exception e){
-			e.printStackTrace();
-		}
-	}
+    public static void receive(String message) {
+        instance.messages.add(message);
+        synchronized (instance.locker) {
+            instance.locker.notify();
+        }
+    }
 
-	private void distribute(){
-		for(String message : messages){
-			PacketPlayOutChatMessage packet = new PacketPlayOutChatMessage(message);
-			for(Player player : UnknownPandaServer.getOnlinePlayers()){
-				try {
-					player.getPlayerConnection().sendPacket(packet);
-				} catch (IOException e) {
-					e.printStackTrace();
-				}
-			}
-		}
-	}
+    @Override
+    public void run() {
+        while (true) {
+            try {
+                distribute();
+                messages.clear();
+                synchronized (locker) {
+                    locker.wait();
+                }
+            }
+            catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
 
-	public static void receive(String message){
-		instance.messages.add(message);
-		synchronized(instance.locker){
-			instance.locker.notify();
-		}
-	}
+    private void distribute() {
+        for (String message : messages) {
+            PacketPlayOutChatMessage packet = new PacketPlayOutChatMessage(message);
+            for (Player player : UnknownPandaServer.getOnlinePlayers()) {
+                try {
+                    player.getPlayerConnection().sendPacket(packet);
+                }
+                catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
 
 }

@@ -7,17 +7,16 @@ import net.dzikoysk.server.connection.protocol.util.DataSerializer;
 
 public class PacketPlayOutTitle extends Packet {
 
-	private final TitleAction action;
+    private final TitleAction action;
 
-	public PacketPlayOutTitle(TitleAction action){
-		this.action = action;
-	}
+    public PacketPlayOutTitle(TitleAction action) {
+        this.action = action;
+    }
 
-	@Override
-	public void send(DataSerializer data){
-		DataEncoder.encodeInt(data, action.getID());
-	}
-
+    @Override
+    public void send(DataSerializer data) {
+        DataEncoder.encodeInt(data, action.getID());
+    }
 
 
 }
