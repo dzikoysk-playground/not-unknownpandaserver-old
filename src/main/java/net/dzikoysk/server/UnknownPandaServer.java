@@ -13,7 +13,8 @@ import java.util.Collection;
 public class UnknownPandaServer {
 	
 	public static final String VERSION = "1.0.0";
-	private static Logger logger = new Logger();
+
+	private static Logger logger;
 	private static ServerConfiguration configuration;
 	private static MinecraftServer server;
 
@@ -24,6 +25,7 @@ public class UnknownPandaServer {
 	public static void main(String[] args) throws Exception {
 		long start = System.currentTimeMillis();
 
+		logger = new Logger();
 		configuration = new ServerConfiguration();
 		protocol = ProtocolVersion.getProtocolVersion(configuration.getInteger("protocol"));
 		host = configuration.getString("host");
@@ -43,7 +45,7 @@ public class UnknownPandaServer {
 	}
 
 	public static void broadcastColoredMessage(String message){
-		broadcastMessage(ChatColor.refactor('&', message));
+		broadcastMessage(ChatColor.translate(message));
 	}
 
 	public static Logger getLogger(){

@@ -12,7 +12,7 @@ public class ChatFormat {
 			for(String s : message.split(colorChar)) {
 				if(s.isEmpty()) continue;
 				char c = s.charAt(0);
-				ChatColor color = ChatColor.getByChar(c);
+				ChatColor color = ChatColor.getByCharCode(c);
 				object.put("color", color.toString());
 				object.put("text", s.substring(1));
 			}
