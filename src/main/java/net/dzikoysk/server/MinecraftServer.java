@@ -59,7 +59,7 @@ public class MinecraftServer {
     public void addPlayer(Player player) {
         this.players.add(player);
         PacketUtil.distributeAll(new PacketPlayOutPlayerListItem(PlayerListType.DEFAULT, PlayerListAction.ADD_PLAYER));
-        UnknownPandaServer.broadcastColoredMessage("&e" + player.getName() + " join to the server!");
+        UnknownPandaServer.broadcastColoredMessage("&e" + player.getName() + " joined to the server!");
     }
 
     public void removePlayer(Player player) {
