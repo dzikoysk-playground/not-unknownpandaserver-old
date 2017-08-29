@@ -1,6 +1,6 @@
 package net.dzikoysk.server;
 
-import net.dzikoysk.panda.util.configuration.PandaConfiguration;
+import org.panda_lang.panda.util.configuration.PandaConfiguration;
 
 import java.io.File;
 import java.io.IOException;
@@ -22,8 +22,7 @@ public class ServerConfiguration {
                 return;
             }
             configuration = new PandaConfiguration(file);
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }

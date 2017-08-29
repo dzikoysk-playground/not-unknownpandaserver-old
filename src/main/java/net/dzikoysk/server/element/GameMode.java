@@ -2,11 +2,11 @@ package net.dzikoysk.server.element;
 
 public enum GameMode {
 
-    SURVIVAL(0x0),
-    CREATIVE(0x1),
-    ADVENTURE(0x2),
-    SPECTATOR(0x3),
-    HARDCORE(0x8);
+    SURVIVAL(0),
+    CREATIVE(1),
+    ADVENTURE(2),
+    SPECTATOR(3),
+    HARDCORE(8);
 
     private final int gamemode;
 

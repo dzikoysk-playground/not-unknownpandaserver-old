@@ -19,8 +19,7 @@ public class PacketHandshakingInSetProtocol extends Packet {
             serverHost = DataDecoder.decodeString(data);
             serverPort = data.readUnsignedShort();
             nextState = DataDecoder.decodeInt(data);
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }

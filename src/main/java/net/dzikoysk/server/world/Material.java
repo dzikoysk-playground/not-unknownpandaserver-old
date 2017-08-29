@@ -13,7 +13,7 @@ public enum Material {
 
     private final int id;
 
-    private Material(int id) {
+    Material(int id) {
         this.id = id;
     }
 

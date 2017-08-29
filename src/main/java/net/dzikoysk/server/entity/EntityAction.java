@@ -12,7 +12,7 @@ public enum EntityAction {
 
     private final int id;
 
-    private EntityAction(int id) {
+    EntityAction(int id) {
         this.id = id;
     }
 

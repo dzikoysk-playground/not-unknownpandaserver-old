@@ -9,7 +9,7 @@ public enum EntityAbilities {
 
     private final int flag;
 
-    private EntityAbilities(int flag) {
+    EntityAbilities(int flag) {
         this.flag = flag;
     }
 

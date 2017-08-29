@@ -13,8 +13,7 @@ public class DataInStream extends DataInputStream {
     public int readableBytes() {
         try {
             return super.available();
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
         return 0;
@@ -23,8 +22,7 @@ public class DataInStream extends DataInputStream {
     public int skipAndReadByte(int i) {
         try {
             return super.skipBytes(i);
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
         return 0;
@@ -33,8 +31,7 @@ public class DataInStream extends DataInputStream {
     public int getRead() {
         try {
             return super.read();
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
         return 0;
@@ -43,8 +40,7 @@ public class DataInStream extends DataInputStream {
     public byte getByte() {
         try {
             return super.readByte();
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
         return 0;
@@ -53,8 +49,7 @@ public class DataInStream extends DataInputStream {
     public short getShort() {
         try {
             return super.readShort();
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
         return 0;
@@ -63,8 +58,7 @@ public class DataInStream extends DataInputStream {
     public int getInt() {
         try {
             return super.readInt();
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
         return 0;
@@ -73,8 +67,7 @@ public class DataInStream extends DataInputStream {
     public long getLong() {
         try {
             return super.readLong();
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
         return 0;
@@ -83,8 +76,7 @@ public class DataInStream extends DataInputStream {
     public float getFloat() {
         try {
             return super.readFloat();
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
         return 0;
@@ -93,8 +85,7 @@ public class DataInStream extends DataInputStream {
     public double getDouble() {
         try {
             return super.readDouble();
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
         return 0;
@@ -103,8 +94,7 @@ public class DataInStream extends DataInputStream {
     public boolean getBoolean() {
         try {
             return super.readBoolean();
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
         return false;
@@ -113,8 +103,7 @@ public class DataInStream extends DataInputStream {
     public char getChar() {
         try {
             return super.readChar();
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
         return 0;
@@ -123,8 +112,7 @@ public class DataInStream extends DataInputStream {
     public String getUTF() {
         try {
             return super.readUTF();
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
         return null;
@@ -133,8 +121,7 @@ public class DataInStream extends DataInputStream {
     public int getUnsignedByte() {
         try {
             return super.readUnsignedByte();
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
         return 0;
@@ -143,8 +130,7 @@ public class DataInStream extends DataInputStream {
     public int getUnsignedShort() {
         try {
             return super.readUnsignedShort();
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
         return 0;

@@ -122,8 +122,7 @@ public class JSONObject {
         for (int i = 0; i < names.length; i += 1) {
             try {
                 this.putOnce(names[i], jo.opt(names[i]));
-            }
-            catch (Exception ignore) {
+            } catch (Exception ignore) {
             }
         }
     }
@@ -246,8 +245,7 @@ public class JSONObject {
             String name = names[i];
             try {
                 this.putOpt(name, c.getField(name).get(object));
-            }
-            catch (Exception ignore) {
+            } catch (Exception ignore) {
             }
         }
     }
@@ -417,8 +415,7 @@ public class JSONObject {
         synchronized (sw.getBuffer()) {
             try {
                 return quote(string, sw).toString();
-            }
-            catch (IOException ignored) {
+            } catch (IOException ignored) {
                 // will never happen - we are writing to a string writer
                 return "";
             }
@@ -533,8 +530,7 @@ public class JSONObject {
                         }
                     }
                 }
-            }
-            catch (Exception ignore) {
+            } catch (Exception ignore) {
             }
         }
         return string;
@@ -594,8 +590,7 @@ public class JSONObject {
             Object object;
             try {
                 object = ((JSONString) value).toJSONString();
-            }
-            catch (Exception e) {
+            } catch (Exception e) {
                 throw new JSONException(e);
             }
             if (object instanceof String) {
@@ -667,15 +662,14 @@ public class JSONObject {
                 return object.toString();
             }
             return new JSONObject(object);
-        }
-        catch (Exception exception) {
+        } catch (Exception exception) {
             return new JSONObject();
         }
     }
 
     @SuppressWarnings("unchecked")
     static final Writer writeValue(Writer writer, Object value,
-                                   int indentFactor, int indent) throws JSONException, IOException {
+            int indentFactor, int indent) throws JSONException, IOException {
         if (value == null || value.equals(null)) {
             writer.write("null");
         }
@@ -705,8 +699,7 @@ public class JSONObject {
             Object o;
             try {
                 o = ((JSONString) value).toJSONString();
-            }
-            catch (Exception e) {
+            } catch (Exception e) {
                 throw new JSONException(e);
             }
             writer.write(o != null ? o.toString() : quote(value.toString()));
@@ -839,8 +832,7 @@ public class JSONObject {
         try {
             return object instanceof Number ? ((Number) object).doubleValue()
                     : Double.parseDouble((String) object);
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             throw new JSONException("JSONObject[" + quote(key)
                     + "] is not a number.");
         }
@@ -859,8 +851,7 @@ public class JSONObject {
         try {
             return object instanceof Number ? ((Number) object).intValue()
                     : Integer.parseInt((String) object);
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             throw new JSONException("JSONObject[" + quote(key)
                     + "] is not an int.");
         }
@@ -911,8 +902,7 @@ public class JSONObject {
         try {
             return object instanceof Number ? ((Number) object).longValue()
                     : Long.parseLong((String) object);
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             throw new JSONException("JSONObject[" + quote(key)
                     + "] is not a long.");
         }
@@ -1064,8 +1054,7 @@ public class JSONObject {
     public boolean optBoolean(String key, boolean defaultValue) {
         try {
             return this.getBoolean(key);
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             return defaultValue;
         }
     }
@@ -1094,8 +1083,7 @@ public class JSONObject {
     public double optDouble(String key, double defaultValue) {
         try {
             return this.getDouble(key);
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             return defaultValue;
         }
     }
@@ -1124,8 +1112,7 @@ public class JSONObject {
     public int optInt(String key, int defaultValue) {
         try {
             return this.getInt(key);
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             return defaultValue;
         }
     }
@@ -1178,8 +1165,7 @@ public class JSONObject {
     public long optLong(String key, long defaultValue) {
         try {
             return this.getLong(key);
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             return defaultValue;
         }
     }
@@ -1253,8 +1239,7 @@ public class JSONObject {
                         }
                     }
                 }
-            }
-            catch (Exception ignore) {
+            } catch (Exception ignore) {
             }
         }
     }
@@ -1450,8 +1435,7 @@ public class JSONObject {
                 }
             }
             return true;
-        }
-        catch (Throwable exception) {
+        } catch (Throwable exception) {
             return false;
         }
     }
@@ -1491,8 +1475,7 @@ public class JSONObject {
     public String toString() {
         try {
             return this.toString(0);
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             return null;
         }
     }
@@ -1581,8 +1564,7 @@ public class JSONObject {
             }
             writer.write('}');
             return writer;
-        }
-        catch (IOException exception) {
+        } catch (IOException exception) {
             throw new JSONException(exception);
         }
     }

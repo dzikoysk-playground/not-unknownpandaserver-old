@@ -10,8 +10,7 @@ public class Utils {
     public static UUID getUUID(String s) {
         try {
             return UUID.nameUUIDFromBytes(s.getBytes("UTF-8"));
-        }
-        catch (UnsupportedEncodingException e) {
+        } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
             return null;
         }
@@ -20,8 +19,7 @@ public class Utils {
     public static ServerSocket getServerSocket(int port, int con) {
         try {
             return new ServerSocket(port, con);
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             System.out.println("CANNOT BIND PORT " + Integer.toString(port));
         }
         return null;

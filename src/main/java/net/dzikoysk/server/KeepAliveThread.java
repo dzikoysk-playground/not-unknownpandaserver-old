@@ -11,8 +11,7 @@ public class KeepAliveThread extends Thread {
         while (true) {
             try {
                 Thread.sleep(1000);
-            }
-            catch (InterruptedException e) {
+            } catch (InterruptedException e) {
                 e.printStackTrace();
             }
         }

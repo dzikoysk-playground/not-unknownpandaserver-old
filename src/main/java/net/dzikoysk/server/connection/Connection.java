@@ -30,8 +30,7 @@ public class Connection extends Thread {
             }
             try {
                 recognizer.receive(serializer);
-            }
-            catch (Exception e) {
+            } catch (Exception e) {
                 e.printStackTrace();
                 disconnect(2);
                 return;
@@ -42,8 +41,7 @@ public class Connection extends Thread {
     public void disconnect(int i) {
         try {
             client.close();
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
         connection.disconnect();

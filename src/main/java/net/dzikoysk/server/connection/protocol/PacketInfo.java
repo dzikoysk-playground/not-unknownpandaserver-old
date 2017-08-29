@@ -46,7 +46,7 @@ public enum PacketInfo {
     private final ProtocolBound bound;
     private final Class<? extends Packet> clazz;
 
-    private PacketInfo(int id, ProtocolState state, ProtocolBound bound, Class<? extends Packet> clazz) {
+    PacketInfo(int id, ProtocolState state, ProtocolBound bound, Class<? extends Packet> clazz) {
         this.id = id;
         this.state = state;
         this.bound = bound;

@@ -36,8 +36,7 @@ public class ChatModule extends Thread {
                 synchronized (locker) {
                     locker.wait();
                 }
-            }
-            catch (Exception e) {
+            } catch (Exception e) {
                 e.printStackTrace();
             }
         }
@@ -49,8 +48,7 @@ public class ChatModule extends Thread {
             for (Player player : UnknownPandaServer.getOnlinePlayers()) {
                 try {
                     player.getPlayerConnection().sendPacket(packet);
-                }
-                catch (IOException e) {
+                } catch (IOException e) {
                     e.printStackTrace();
                 }
             }

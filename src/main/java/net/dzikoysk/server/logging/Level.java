@@ -4,6 +4,6 @@ public enum Level {
 
     INFO,
     SEVERE,
-    WARNING;
+    WARNING
 
 }

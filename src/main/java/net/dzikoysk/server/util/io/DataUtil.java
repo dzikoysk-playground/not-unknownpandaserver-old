@@ -14,11 +14,9 @@ public class DataUtil {
             digest = MessageDigest.getInstance("SHA-1");
             digest.reset();
             digest.update(data.getBytes("UTF-8"));
-        }
-        catch (NoSuchAlgorithmException e) {
+        } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
-        }
-        catch (UnsupportedEncodingException e) {
+        } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }
         byte[] hash = digest.digest();

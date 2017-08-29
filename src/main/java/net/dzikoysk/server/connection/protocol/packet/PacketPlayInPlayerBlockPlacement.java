@@ -43,7 +43,7 @@ public class PacketPlayInPlayerBlockPlacement extends Packet {
     }
 
     public byte[] getCursorPosition() {
-        return new byte[]{x, y, z};
+        return new byte[]{ x, y, z };
     }
 
 }

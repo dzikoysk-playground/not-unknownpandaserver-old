@@ -11,7 +11,7 @@ public enum BlockFace {
 
     private final int face;
 
-    private BlockFace(int i) {
+    BlockFace(int i) {
         this.face = i;
     }
 

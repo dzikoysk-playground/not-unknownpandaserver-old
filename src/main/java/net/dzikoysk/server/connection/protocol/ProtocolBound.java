@@ -4,6 +4,6 @@ public enum ProtocolBound {
 
     CLIENT,
     SERVER,
-    CLIENT_SERVER;
+    CLIENT_SERVER
 
 }

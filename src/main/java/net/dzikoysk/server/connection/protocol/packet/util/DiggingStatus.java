@@ -11,7 +11,7 @@ public enum DiggingStatus {
 
     private final int status;
 
-    private DiggingStatus(int status) {
+    DiggingStatus(int status) {
         this.status = status;
     }
 

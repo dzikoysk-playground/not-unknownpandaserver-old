@@ -8,7 +8,7 @@ public enum EntityUse {
 
     private final int id;
 
-    private EntityUse(int id) {
+    EntityUse(int id) {
         this.id = id;
     }
 

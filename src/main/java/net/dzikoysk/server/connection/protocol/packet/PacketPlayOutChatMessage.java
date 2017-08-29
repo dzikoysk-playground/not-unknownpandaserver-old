@@ -22,11 +22,11 @@ public class PacketPlayOutChatMessage extends Packet {
     }
 
     public PacketPlayOutChatMessage(String message, boolean colored) {
-        this.message = ChatColor.refactor('&', message);
+        this.message = ChatColor.translate('&', message);
     }
 
     public PacketPlayOutChatMessage(String message, int position, boolean colored) {
-        this.message = ChatColor.refactor('&', message);
+        this.message = ChatColor.translate('&', message);
         this.position = position;
     }
 

@@ -149,7 +149,7 @@ public class XML {
      * @throws JSONException
      */
     private static boolean parse(XMLTokener x, JSONObject context,
-                                 String name) throws JSONException {
+            String name) throws JSONException {
         char c;
         int i;
         JSONObject jsonobject = null;
@@ -360,15 +360,13 @@ public class XML {
                     return value;
                 }
             }
-        }
-        catch (Exception ignore) {
+        } catch (Exception ignore) {
             try {
                 Double value = new Double(string);
                 if (value.toString().equals(string)) {
                     return value;
                 }
-            }
-            catch (Exception ignoreAlso) {
+            } catch (Exception ignoreAlso) {
             }
         }
         return string;

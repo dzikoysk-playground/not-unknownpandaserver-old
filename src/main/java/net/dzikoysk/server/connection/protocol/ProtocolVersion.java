@@ -9,7 +9,7 @@ public enum ProtocolVersion {
     private final String name;
     private final int number;
 
-    private ProtocolVersion(String name, int number) {
+    ProtocolVersion(String name, int number) {
         this.name = name;
         this.number = number;
     }

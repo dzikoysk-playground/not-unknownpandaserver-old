@@ -25,8 +25,7 @@ public class DataDecoder {
     public static int decodeInt(DataSerializer data) {
         try {
             return decodeInt(data.getDataInStream());
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
             return 0;
         }

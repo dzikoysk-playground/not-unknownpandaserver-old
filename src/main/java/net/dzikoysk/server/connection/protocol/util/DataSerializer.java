@@ -45,8 +45,7 @@ public class DataSerializer {
         try {
             byteArrayInputStream.close();
             dataInputStream.close();
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
         return serializer;

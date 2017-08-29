@@ -5,6 +5,6 @@ public enum WorldType {
     FLAT,
     DEFAULT,
     NETHER,
-    END;
+    END
 
 }

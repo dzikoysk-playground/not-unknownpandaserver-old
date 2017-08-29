@@ -227,8 +227,7 @@ public class JSONArray {
         try {
             return object instanceof Number ? ((Number) object).doubleValue()
                     : Double.parseDouble((String) object);
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             throw new JSONException("JSONArray[" + index + "] is not a number.");
         }
     }
@@ -245,8 +244,7 @@ public class JSONArray {
         try {
             return object instanceof Number ? ((Number) object).intValue()
                     : Integer.parseInt((String) object);
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             throw new JSONException("JSONArray[" + index + "] is not a number.");
         }
     }
@@ -296,8 +294,7 @@ public class JSONArray {
         try {
             return object instanceof Number ? ((Number) object).longValue()
                     : Long.parseLong((String) object);
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             throw new JSONException("JSONArray[" + index + "] is not a number.");
         }
     }
@@ -393,8 +390,7 @@ public class JSONArray {
     public boolean optBoolean(int index, boolean defaultValue) {
         try {
             return this.getBoolean(index);
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             return defaultValue;
         }
     }
@@ -423,8 +419,7 @@ public class JSONArray {
     public double optDouble(int index, double defaultValue) {
         try {
             return this.getDouble(index);
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             return defaultValue;
         }
     }
@@ -453,8 +448,7 @@ public class JSONArray {
     public int optInt(int index, int defaultValue) {
         try {
             return this.getInt(index);
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             return defaultValue;
         }
     }
@@ -508,8 +502,7 @@ public class JSONArray {
     public long optLong(int index, long defaultValue) {
         try {
             return this.getLong(index);
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             return defaultValue;
         }
     }
@@ -826,8 +819,7 @@ public class JSONArray {
     public String toString() {
         try {
             return this.toString(0);
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             return null;
         }
     }
@@ -907,8 +899,7 @@ public class JSONArray {
             }
             writer.write(']');
             return writer;
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             throw new JSONException(e);
         }
     }

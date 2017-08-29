@@ -10,7 +10,7 @@ public enum PlayerListAction {
 
     private final int id;
 
-    private PlayerListAction(int i) {
+    PlayerListAction(int i) {
         this.id = i;
     }
 

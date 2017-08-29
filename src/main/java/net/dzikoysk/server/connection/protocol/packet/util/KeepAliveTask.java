@@ -29,8 +29,7 @@ public class KeepAliveTask extends TimerTask {
     public void run() {
         try {
             connection.sendPacket(new PacketPlayIOKeepAlive());
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             stop();
         }
     }

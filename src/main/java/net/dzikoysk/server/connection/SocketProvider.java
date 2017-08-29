@@ -32,8 +32,7 @@ public class SocketProvider extends Thread {
                 client.setSoTimeout(7000);
                 //UnknownPandaServer.getLogger().info("new Client: " + client.getInetAddress().getHostAddress());
                 new Connection(client).start();
-            }
-            catch (IOException e) {
+            } catch (IOException e) {
                 e.printStackTrace();
             }
         }

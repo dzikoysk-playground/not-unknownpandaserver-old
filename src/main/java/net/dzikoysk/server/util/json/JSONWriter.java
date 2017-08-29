@@ -114,8 +114,7 @@ public class JSONWriter {
                     this.writer.write(',');
                 }
                 this.writer.write(string);
-            }
-            catch (IOException e) {
+            } catch (IOException e) {
                 throw new JSONException(e);
             }
             if (this.mode == 'o') {
@@ -164,8 +163,7 @@ public class JSONWriter {
         this.pop(mode);
         try {
             this.writer.write(c);
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             throw new JSONException(e);
         }
         this.comma = true;
@@ -218,8 +216,7 @@ public class JSONWriter {
                 this.comma = false;
                 this.mode = 'o';
                 return this;
-            }
-            catch (IOException e) {
+            } catch (IOException e) {
                 throw new JSONException(e);
             }
         }

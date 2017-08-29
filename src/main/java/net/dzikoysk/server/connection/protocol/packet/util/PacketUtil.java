@@ -12,8 +12,7 @@ public class PacketUtil {
         for (Player player : UnknownPandaServer.getOnlinePlayers()) {
             try {
                 player.getPlayerConnection().sendPacket(packet);
-            }
-            catch (IOException e) {
+            } catch (IOException e) {
                 e.printStackTrace();
             }
         }

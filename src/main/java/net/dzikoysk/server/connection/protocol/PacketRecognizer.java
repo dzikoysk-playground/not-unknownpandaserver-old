@@ -34,8 +34,7 @@ public class PacketRecognizer {
                 connection.getConnection().disconnect(0);
                 return null;
             }
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             connection.getConnection().disconnect(0);
             return null;
         }

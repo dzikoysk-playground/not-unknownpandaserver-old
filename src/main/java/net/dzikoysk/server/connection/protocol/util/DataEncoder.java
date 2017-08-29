@@ -29,8 +29,7 @@ public class DataEncoder {
     public static void encodeInt(DataSerializer data, int i) {
         try {
             encodeInt(data.getDataOutStream(), i);
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }

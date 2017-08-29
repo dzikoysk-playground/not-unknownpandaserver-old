@@ -10,7 +10,7 @@ public enum TitleAction {
 
     private final int id;
 
-    private TitleAction(int id) {
+    TitleAction(int id) {
         this.id = id;
     }
 

@@ -17,8 +17,7 @@ public class IOUtils {
                 else {
                     file.mkdir();
                 }
-            }
-            catch (IOException e) {
+            } catch (IOException e) {
                 e.printStackTrace();
             }
         }
@@ -35,11 +34,9 @@ public class IOUtils {
             encoding = encoding == null ? "UTF-8" : encoding;
             body = IOUtils.toString(in, encoding);
             in.close();
-        }
-        catch (TimeoutException e) {
+        } catch (TimeoutException e) {
             e.printStackTrace();
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return body;
@@ -60,8 +57,7 @@ public class IOUtils {
                 line = br.readLine();
             }
             br.close();
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
         return sb.toString();
@@ -79,8 +75,7 @@ public class IOUtils {
         if (!f.delete()) {
             try {
                 throw new FileNotFoundException("Failed to delete file: " + f);
-            }
-            catch (FileNotFoundException e) {
+            } catch (FileNotFoundException e) {
                 e.printStackTrace();
             }
         }

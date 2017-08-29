@@ -9,7 +9,7 @@ public enum ProtocolState {
 
     private final int id;
 
-    private ProtocolState(int i) {
+    ProtocolState(int i) {
         this.id = i;
     }
 
