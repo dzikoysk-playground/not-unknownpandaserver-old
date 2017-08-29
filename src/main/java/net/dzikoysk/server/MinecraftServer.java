@@ -59,12 +59,12 @@ public class MinecraftServer {
     public void addPlayer(Player player) {
         this.players.add(player);
         PacketUtil.distributeAll(new PacketPlayOutPlayerListItem(PlayerListType.DEFAULT, PlayerListAction.ADD_PLAYER));
-        UnknownPandaServer.broadcastColoredMessage("&e" + player.getName() + " join to the server!");
+        UnknownPandaServer.broadcastColoredMessage("&e" + player.getName() + " joined the game.");
     }
 
     public void removePlayer(Player player) {
         this.players.remove(player);
-        UnknownPandaServer.broadcastColoredMessage("&e" + player.getName() + " left the game");
+        UnknownPandaServer.broadcastColoredMessage("&e" + player.getName() + " left the game.");
     }
 
     public World getWorld() {
